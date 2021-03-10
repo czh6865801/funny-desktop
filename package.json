@@ -1,0 +1,14 @@
+{
+  "name": "funny-desktop",
+  "version": "1.0.0",
+  "description": "this is a funny desktop",
+  "main": "index.js",
+  "author": "chenzhihua",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node build/dev-runner.js"
+  },
+  "devDependencies": {
+    "electron": "^12.0.0"
+  }
+}
