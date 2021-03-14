@@ -6,7 +6,8 @@
   "author": "chenzhihua",
   "license": "MIT",
   "scripts": {
-    "dev": " node build/dev-runner.js",
+    "dev": "node build/dev-runner.js",
+    "build": "webpack --config build/webpack.prod",
     "start": "electron src/MainProcess/index.js"
   },
   "devDependencies": {
