@@ -14,6 +14,7 @@ module.exports = {
     clean: true,
   },
   devServer: {
+    port: 9080,
     contentBase: './src/RendererProcess',
   },
   module: {
