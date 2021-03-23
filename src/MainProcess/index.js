@@ -7,8 +7,8 @@ const isWindows = process.platform === 'win32'
 function createWindow () {
   // 创建浏览器窗口 https://www.electronjs.org/docs/api/browser-window#%E8%AE%BE%E7%BD%AE-backgroundcolor
   let win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 300,
+    height: 500,
     center: true, //窗口在屏幕居中
     frame: false, //无边框窗口  随之会取消菜单栏
     // titleBarStyle: 'hiddenInset',  //隐藏导航栏
@@ -17,7 +17,6 @@ function createWindow () {
     // 设置网页的功能
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, '../Plugin/preload.js'),
       // 注释以下两个键值对会报警告  https://github.com/electron/electron/issues/24950
       contextIsolation: true,
       worldSafeExecuteJavaScript: true
@@ -33,7 +32,7 @@ function createWindow () {
   // })
 
   // win.loadURL(url)
-  win.loadFile('../RendererProcess/htmlFile/login.html')
+  win.loadURL('http://localhost:9080/index.html')
   // 打开开发者工具
   win.webContents.openDevTools()
 }

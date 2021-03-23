@@ -23,12 +23,19 @@ if (platform !== 'win32') {
   exec('kill -9 lsof -t -i: 9080', (error) => {
     console.error(error)
   })
+} else {
+  var a = exec('netstat -ano | findstr 9080')
+  a.stdout.on('data', function (stdout) {
+    let b = stdout.split('  ')
+    for (let index = 0; index < b.length; index++) {
+      if (/(\r\n)/g.test(b[index])) {
+        const pid = (b[index].replace(/(\r\n)/g, '')).trim()
+        console.log(pid)
+        exec(`taskkill /pid ${pid} -t -f`)
+      }
+    }
+  })
 }
 
 console.log(`${YELLOW}Starting webpack serve...\n${END}`)
-run('webpack serve --config ./build/webpack.dev.js',YELLOW,'webpack')
-
-
-
-
-
+run('webpack serve --config ./build/webpack.dev.js', YELLOW, 'webpack')
