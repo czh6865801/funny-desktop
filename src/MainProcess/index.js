@@ -1,13 +1,33 @@
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron")
 const path = require('path')
 const isWindows = process.platform === 'win32'
+const { ipcMain } = require('electron')
+
+//启用热更新
+try {
+  require('electron-reloader')(module,{
+    watchRenderer: false,
+    debug: true
+  })
+} catch { }
+
+
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg) // prints "ping"
+  event.reply('asynchronous-reply', 'pong')
+})
+
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg) // prints "ping"
+  event.returnValue = 'pong'
+})
 
 // https://zhuanlan.zhihu.com/p/138128748  好文章
 
-function createWindow () {
+function createWindow() {
   // 创建浏览器窗口 https://www.electronjs.org/docs/api/browser-window#%E8%AE%BE%E7%BD%AE-backgroundcolor
   let win = new BrowserWindow({
-    width: 300,
+    width: 500,
     height: 500,
     center: true, //窗口在屏幕居中
     frame: false, //无边框窗口  随之会取消菜单栏
@@ -17,9 +37,7 @@ function createWindow () {
     // 设置网页的功能
     webPreferences: {
       nodeIntegration: true,
-      // 注释以下两个键值对会报警告  https://github.com/electron/electron/issues/24950
-      contextIsolation: true,
-      worldSafeExecuteJavaScript: true
+      contextIsolation: false
     }
   })
   // Menu.setApplicationMenu(null) //取消菜单栏
