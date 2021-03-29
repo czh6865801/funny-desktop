@@ -2,8 +2,8 @@ const { BrowserWindow } = require("electron")
 const isWin = process.platform === 'win32'
 const isDebug = process.env.NODE_ENV === 'development'
 let WinOptions = {
-  width: 500,
-  height: 500,
+  width: 1000,
+  height: 600,
   center: true, //窗口在屏幕居中
   frame: !isWin, //无边框窗口  随之会取消菜单栏
   // titleBarStyle: 'hiddenInset',  //隐藏导航栏

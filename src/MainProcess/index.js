@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require("electron")
-const { ipcMain } = require('electron')
 const ElectronWindow = require('./lib/window.js')
 //启用热更新
 try {
@@ -8,17 +7,6 @@ try {
     debug: true
   })
 } catch { }
-
-
-ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg) // prints "ping"
-  event.reply('asynchronous-reply', 'pong')
-})
-
-ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg) // prints "ping"
-  event.returnValue = 'pong'
-})
 
 app.on('ready', ()=>{
   ElectronWindow.init()
