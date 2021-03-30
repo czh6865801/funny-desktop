@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //打包前清�
 const ProgressBarPlugin = require("progress-bar-webpack-plugin"); // 打包进度条美化
 const chalk = require("chalk");
 
+process.env.NODE_ENV === 'production'
+
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
@@ -14,7 +16,7 @@ module.exports = {
   output: {
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../dist/electron'),
     clean: true,
   },
   devServer: {

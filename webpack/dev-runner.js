@@ -38,4 +38,4 @@ if (platform !== 'win32') {
 }
 
 console.log(`${YELLOW}Starting webpack serve...\n${END}`)
-run('webpack serve --config ./build/webpack.dev.js', YELLOW, 'webpack')
+run('webpack serve --config ./webpack/webpack.dev.js', YELLOW, 'webpack')

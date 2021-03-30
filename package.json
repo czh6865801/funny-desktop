@@ -2,12 +2,13 @@
   "name": "funny-desktop",
   "version": "1.0.0",
   "description": "this is a funny desktop",
-  "main": "index.js",
+  "main": "./dist/electron/js/index.js",
   "author": "chenzhihua",
   "license": "MIT",
   "scripts": {
-    "dev": "node build/dev-runner.js",
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod electron-builder",
+    "dev": "node webpack/dev-runner.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod && npm run build:build",
+    "build:build": "cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder",
     "start": "cross-env NODE_ENV=development electron src/MainProcess/index.js"
   },
   "build": {
@@ -17,7 +18,10 @@
       "output": "build"
     },
     "files": [
-      "dist/electron/**/*"
+      "./dist/electron/index.html",
+      "./dist/electron/js/index.js",
+      "./package.json",
+      "./dist/electron/**/*"
     ],
     "dmg": {
       "contents": [
