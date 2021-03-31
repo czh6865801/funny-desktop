@@ -2,7 +2,7 @@
   "name": "funny-desktop",
   "version": "1.0.0",
   "description": "this is a funny desktop",
-  "main": "./dist/electron/js/index.js",
+  "main": "./dist/js/index.js",
   "author": "chenzhihua",
   "license": "MIT",
   "scripts": {
@@ -18,10 +18,10 @@
       "output": "build"
     },
     "files": [
-      "./dist/electron/index.html",
-      "./dist/electron/js/index.js",
+      "./dist/index.html",
+      "./dist/js/index.js",
       "./package.json",
-      "./dist/electron/**/*"
+      "./dist/**/*"
     ],
     "dmg": {
       "contents": [

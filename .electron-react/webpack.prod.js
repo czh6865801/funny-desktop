@@ -9,6 +9,7 @@ process.env.NODE_ENV === 'production'
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
+  target: "electron-main",
   stats: 'normal', // 打包日志发生错误和新的编译时输出
   entry: {
     index: path.resolve(__dirname, '../src/RendererProcess/entry/index.js')
@@ -16,7 +17,7 @@ module.exports = {
   output: {
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
-    path: path.resolve(__dirname, '../dist/electron'),
+    path: path.resolve(__dirname, '../dist'),
     clean: true,
   },
   devServer: {
