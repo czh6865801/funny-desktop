@@ -6,8 +6,8 @@
   "author": "chenzhihua",
   "license": "MIT",
   "scripts": {
-    "dev": "node webpack/dev-runner.js",
-    "build": "webpack --config webpack/webpack.prod && npm run build:build",
+    "dev": "node .electron-react/dev-runner.js",
+    "build": "webpack --config .electron-react/webpack.prod.js && npm run build:build",
     "build:build": "cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder",
     "start": "cross-env NODE_ENV=development electron src/MainProcess/index.js"
   },
