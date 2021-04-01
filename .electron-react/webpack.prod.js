@@ -1,12 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //打包前清空build目录文件
-const ProgressBarPlugin = require("progress-bar-webpack-plugin"); // 打包进度条美化
-const chalk = require("chalk");
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
 
 process.env.NODE_ENV === 'production'
 
-module.exports = {
+module.exports = smp.wrap({
   mode: 'production',
   devtool: 'source-map',
   target: "electron-main",
@@ -51,15 +51,7 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/RendererProcess/public/index.html'),
     }),
-    new CleanWebpackPlugin(),
-    new ProgressBarPlugin({
-        format:
-            `${chalk.green.bold("build[:bar]")} ` +
-            chalk.green.bold(":percent") +
-            " (:elapsed seconds)",
-        clear: false,
-        width: 60,
-    }),
+    new CleanWebpackPlugin()
   ]
-};
+})
 
