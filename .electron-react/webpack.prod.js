@@ -8,7 +8,7 @@ process.env.NODE_ENV === 'production'
 
 module.exports = smp.wrap({
   mode: 'production',
-  target: "electron-main",
+  target: "electron-renderer",
   stats: 'normal', // 打包日志发生错误和新的编译时输出
   entry: {
     index: path.resolve(__dirname, '../src/RendererProcess/entry/index.js')
@@ -18,9 +18,6 @@ module.exports = smp.wrap({
     chunkFilename: 'js/[name].js',
     path: path.resolve(__dirname, '../dist'),
     clean: true,
-  },
-  devServer: {
-    contentBase: './src/RendererProcess',
   },
   module: {
     rules: [
