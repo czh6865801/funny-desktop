@@ -8,7 +8,6 @@ process.env.NODE_ENV === 'production'
 
 module.exports = smp.wrap({
   mode: 'production',
-  devtool: 'source-map',
   target: "electron-main",
   stats: 'normal', // 打包日志发生错误和新的编译时输出
   entry: {
