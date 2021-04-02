@@ -45,9 +45,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: path.resolve(__dirname, '../src/RendererProcess/public/index.html'),
-      title: 'Output Management',
-      title: 'Development',
     }),
   ]
 };
