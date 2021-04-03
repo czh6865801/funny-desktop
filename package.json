@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "node .electron-react/dev-runner.js",
-    "build": "webpack --config .electron-react/webpack.prod.js && webpack --config .electron-react/webpack.main.config.js",
+    "build": "npm run build:renderer && npm run build:main && npm run build:build",
+    "build:renderer": "webpack --config .electron-react/webpack.renderer.js",
+    "build:main": " webpack --config .electron-react/webpack.main.js",
     "build:build": "cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder",
     "start": "cross-env NODE_ENV=development electron src/MainProcess/index.js"
   },
