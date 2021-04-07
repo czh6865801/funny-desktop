@@ -22,7 +22,7 @@ const run = (command, color, name) => {
 
 //启动前杀死所有node进程。防止端口占用
 if (platform !== 'win32') {
-  exec('kill -9 lsof -t -i: 9080', (error) => {
+  exec('kill -9 `lsof -t -i:9080`', (error) => {
     console.error(error)
   })
 } else {
