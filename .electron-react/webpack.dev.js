@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-process.env.NODE_ENV === 'development'
+process.env.NODE_ENV = 'development'
 
 module.exports = {
   mode: 'development',
@@ -38,17 +38,16 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.less$/i,
+        test: /\.(css|less)$/i,
         use: [
           {
             loader: "style-loader",
           },
           {
             loader: "css-loader",
+          },
+          {
+            loader: 'postcss-loader'
           },
           {
             loader: "less-loader",
@@ -61,10 +60,6 @@ module.exports = {
         ],
       },
     ],
-  },
-  cache: {
-    // 使用持久化缓存
-    type: "filesystem", //memory:使用内容缓存 filesystem：使用文件缓存
   },
   plugins: [
     new HtmlWebpackPlugin({
