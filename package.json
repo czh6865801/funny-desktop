@@ -75,7 +75,9 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "antd": "^4.15.0",
     "react": "^17.0.1",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
   }
