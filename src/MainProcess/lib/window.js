@@ -6,7 +6,7 @@ let WinOptions = {
   height: 600,
   center: true, //窗口在屏幕居中
   frame: !isWin, //无边框窗口  随之会取消菜单栏
-  // titleBarStyle: !isWin && 'hidden',
+  titleBarStyle: !isWin && 'hidden',
   // trafficLightPosition: !isWin && {x:5,y:15},
   backgroundColor: '#fff',
   // 设置网页的功能

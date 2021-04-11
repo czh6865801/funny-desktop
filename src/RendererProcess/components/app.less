@@ -7,12 +7,19 @@ html,body {
 #root {
   height: 100%;
   display: flex;
-  padding: 5px;
+  flex-direction: column;
 }
-.layout_left {
-  width: 300px;
-  padding-right: 5px;
-}
-.layout_right {
+.layout {
   flex: 1;
+  display: flex;
+  padding: 5px;
+  .layout_left {
+    width: 300px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .layout_right {
+    flex: 1;
+  }
 }

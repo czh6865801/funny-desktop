@@ -1,12 +1,14 @@
-import React from "react"
+import React, {Fragment} from "react"
 import './index.less'
 import { Input } from 'antd'
-export default class Login extends React.Component {
+import { SearchOutlined } from '@ant-design/icons';
+
+export default class Search extends React.Component {
   render() {
     return (
-      <>
-        <Input placeholder="Basic usage" className="marginBottomInput" />
-      </>
+      <div className="SearchComponents">
+        <Input placeholder="搜索" className="marginBottomInput" prefix={<SearchOutlined />} />
+      </div>
     )
   }
 }
