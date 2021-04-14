@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require("electron")
 const ElectronWindow = require('./lib/window.js')
+const ipc = require('./lib/ipc.js')
 //启用热更新
 if(process.env.NODE_ENV === 'development') {
   try {
@@ -12,6 +13,7 @@ if(process.env.NODE_ENV === 'development') {
 
 app.on('ready', ()=>{
   ElectronWindow.init()
+  ipc.init()
 })
 
 //当所有窗口都被关闭后退出
