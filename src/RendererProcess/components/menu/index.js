@@ -4,7 +4,9 @@ import { Button } from 'antd'
 
 export default class Menu extends React.Component {
   async getdata () {
-    const res = await React.$api.getdata()
+    const res = await window.init({
+      url: 'https://chp.shadiao.app/api.php'
+    })
     console.log(111,res)
   }
   render() {

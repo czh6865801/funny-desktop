@@ -1,4 +1,5 @@
 const { BrowserWindow } = require("electron")
+const path = require('path')
 const isWin = process.platform === 'win32'
 const isDebug = process.env.NODE_ENV === 'development'
 let WinOptions = {
@@ -12,7 +13,8 @@ let WinOptions = {
   // 设置网页的功能
   webPreferences: {
     nodeIntegration: true,
-    contextIsolation: false
+    contextIsolation: false,
+    preload: path.join(__dirname, '../preload/index.js')
   }
 }
 
