@@ -14,13 +14,7 @@ var mainConfig = {
         include: [path.resolve(__dirname, '../src/MainProcess/index.js')],
         use: [
           {
-            loader: "babel-loader",
-            options: {
-              presets: [
-                "@babel/preset-env",
-                "@babel/preset-react",
-              ],
-            },
+            loader: "babel-loader"
           },
         ],
       },
