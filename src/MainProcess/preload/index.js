@@ -1,9 +1,3 @@
-const { ipcMain } = require('electron')
-const needle = require('needle')
+const { getData } = require('../../core/http/http-request')
 
-
-window.init = async (arg)=> {
-  const a = await needle('get',arg.url)
-  return a
-}
-console.log(window)
+window.getData = getData
