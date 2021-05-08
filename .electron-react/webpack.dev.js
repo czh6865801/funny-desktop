@@ -55,6 +55,11 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    alias: {
+      '@api': path.join(__dirname, '../src/core/http/api')
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
