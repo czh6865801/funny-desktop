@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node .electron-react/dev-runner.js",
-    "start": "cross-env NODE_ENV=development electron -r ./.electron-react/BabelRegister ./src/MainProcess/index.js",
+    "start": "cross-env NODE_ENV=development electron -r ./.electron-react/babel-register ./src/MainProcess/index.js",
     "build": "npm run build:renderer && npm run build:main && npm run build:build",
     "build:renderer": "webpack --config .electron-react/webpack.renderer.js",
     "build:main": " webpack --config .electron-react/webpack.main.js",
