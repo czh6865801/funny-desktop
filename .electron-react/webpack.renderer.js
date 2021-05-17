@@ -68,6 +68,11 @@ module.exports = {
       chunkFilename: '../dist/css/[id].css',
     }),
   ],
+  resolve: {
+    alias: {
+      '@api': path.join(__dirname, '../src/core/http/api')
+    }
+  },
   optimization: {
     minimizer: [
       new CssMinimizerPlugin(),
