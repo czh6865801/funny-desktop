@@ -14,7 +14,7 @@ let WinOptions = {
   webPreferences: {
     nodeIntegration: true,
     contextIsolation: false,
-    preload: path.join(__dirname, '../preload/index.js')
+    preload: isDebug ? path.resolve(__dirname, '../preload/index.js') : path.resolve(__dirname, './preload/index.js')
   }
 }
 
