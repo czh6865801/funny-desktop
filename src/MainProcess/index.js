@@ -1,14 +1,5 @@
 const { app, BrowserWindow } = require("electron")
 const ElectronWindow = require('./lib/window.js')
-//启用热更新
-if(process.env.NODE_ENV === 'development') {
-  try {
-    require('electron-reloader')(module,{
-      watchRenderer: false,
-      debug: true
-    })
-  } catch { }
-}
 
 app.on('ready', ()=>{
   ElectronWindow.init()
