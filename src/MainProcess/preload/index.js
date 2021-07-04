@@ -1,3 +1,3 @@
-const { getData } = require('../../core/http/http-request')
+const HttpService = require('../../Service/HttpService')
 
-window.getData = getData
+window.HttpService = HttpService

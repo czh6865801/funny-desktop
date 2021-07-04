@@ -54,7 +54,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@api': path.join(__dirname, '../src/core/http/api')
+      '@api': path.join(__dirname, '../src/Service/ApiService')
     }
   },
   plugins: [
