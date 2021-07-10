@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node .electron-react/dev-runner.js",
-    "start": "cross-env NODE_ENV=development electron -r ./.electron-react/babel-register ./src/MainProcess/index.js",
+    "start": "cross-env NODE_ENV=development electron -r ./.electron-react/babel-register ./src/MainProcess/index.ts",
     "build": "npm run build:renderer && npm run build:main && npm run build:preload && npm run build:build",
     "build:renderer": "webpack --config .electron-react/webpack.renderer.js",
     "build:main": " webpack --config .electron-react/webpack.main.js",
@@ -71,6 +71,7 @@
     "less-loader": "^8.0.0",
     "mini-css-extract-plugin": "^1.4.1",
     "style-loader": "^2.0.0",
+    "typescript": "^4.3.5",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
