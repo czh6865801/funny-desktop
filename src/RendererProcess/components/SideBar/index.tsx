@@ -20,7 +20,6 @@ export default class Menu extends React.Component<Iprops, IState> {
       url: 'https://chp.shadiao.app/api.php'
     })
     this.setState({value: res.body})
-    console.log(111,Array.from(new Set([1, 2, 3, 2, 1])),res)
   }
   render() {
     return (
