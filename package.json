@@ -6,7 +6,7 @@
   "author": "chenzhihua",
   "license": "MIT",
   "scripts": {
-    "dev": "node .electron-react/dev-runner.js",
+    "dev": "cross-env NODE_ENV=development node .electron-react/dev-runner.js",
     "start": "cross-env NODE_ENV=development electron -r ./.electron-react/babel-register ./src/MainProcess/index.js",
     "build": "npm run build:renderer && npm run build:main && npm run build:preload && npm run build:build",
     "build:renderer": "webpack --config .electron-react/webpack.renderer.js",
@@ -76,7 +76,8 @@
     "typescript": "^4.3.5",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "antd": "^4.15.0",

@@ -5,8 +5,6 @@ let END = '\x1b[0m'
 const { exec } = require('child_process')
 const platform = require('process').platform
 
-process.env.NODE_ENV === 'development'
-
 const format = (name, data, color) => {
   return color + name + END +
     '  ' + // Two space offset
