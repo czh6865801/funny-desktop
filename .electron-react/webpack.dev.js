@@ -14,6 +14,7 @@ module.exports = {
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
     path: path.resolve(__dirname, '../dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
   },
   devServer: {
@@ -52,6 +53,10 @@ module.exports = {
             },
           }
         ],
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif|webp)(\?.*)?$/,
+        type: 'asset/resource'
       },
     ],
   },

@@ -19,14 +19,14 @@ module.exports = {
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
     path: path.resolve(__dirname, '../dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
   },
   module: {
     rules: [
       {
-        test: /\.js$/i,
+        test: /\.(tsx|js)$/i,
         exclude: /node_modules/,
-        include: [path.resolve(__dirname, '../src')],
         use: [
           {
             loader: "babel-loader"
@@ -34,15 +34,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.html$/i,
-        use: 'html-loader'
-      },
-      {
         test: /\.(css|less)$/i,
         use: [{
           loader: MiniCssExtractPlugin.loader,
           options: {
-            publicPath: '../dist/file-img'
+            publicPath: '../'
           }
         }, {
           loader: 'css-loader'
@@ -54,7 +50,11 @@ module.exports = {
             },
           },
         }]
-      }
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif|webp)(\?.*)?$/,
+        type: 'asset/resource'
+      },
     ],
   },
   plugins: [
@@ -69,6 +69,7 @@ module.exports = {
     }),
   ],
   resolve: {
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'], //webpack 扩展 可以解析的 模块
     alias: {
       '@api': path.join(__dirname, '../src/Service/ApiService')
     }
