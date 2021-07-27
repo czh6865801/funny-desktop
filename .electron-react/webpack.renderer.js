@@ -19,7 +19,7 @@ module.exports = {
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
     path: path.resolve(__dirname, '../dist'),
-    assetModuleFilename: 'images/[hash][ext][query]',
+    assetModuleFilename: 'images/[name][ext][query]',
     clean: true,
   },
   module: {
