@@ -34,7 +34,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'], //webpack 扩展 可以解析的 模块
     alias: {
-      '@api': path.join(__dirname, '../src/Service/ApiService')
+      '@Service': path.join(__dirname, '../src/Service'),
+      '@RendererProcess': path.join(__dirname, '../src/RendererProcess')
     }
   }
 }
