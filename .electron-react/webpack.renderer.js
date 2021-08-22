@@ -18,15 +18,6 @@ module.exports = merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.(tsx|js)$/i,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader"
-          },
-        ],
-      },
-      {
         test: /\.(css|less)$/i,
         use: [{
           loader: MiniCssExtractPlugin.loader,

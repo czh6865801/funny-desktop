@@ -1,7 +1,9 @@
 const path = require('path');
+const isDebug = process.env.NODE_ENV === 'development';
 
 module.exports = {
   output: {
+    publicPath: isDebug ? `http://localhost:9080/` : '',
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
     path: path.resolve(__dirname, '../dist'),
