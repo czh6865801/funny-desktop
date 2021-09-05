@@ -3,8 +3,10 @@ const path = require('path')
 const isWin = process.platform === 'win32'
 const isDebug = process.env.NODE_ENV === 'development'
 let WinOptions = {
-  width: 1000,
-  height: 600,
+  height: isWin ? 600 : 680,
+  width: 1024,
+  minHeight: 600,
+  minWidth: 1004,
   center: true, //窗口在屏幕居中
   frame: !isWin, //无边框窗口  随之会取消菜单栏
   titleBarStyle: !isWin && 'hidden',
