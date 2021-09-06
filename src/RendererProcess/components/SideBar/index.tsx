@@ -1,10 +1,9 @@
 import React from "react"
 import './index.less'
-import { Button } from 'antd'
+// import { Button } from 'antd'
 import { getwords } from '@Service/ApiService/index.js'
-interface Iprops {
-  size: string
-}
+import WinActionBtn from '../winActionBtn'
+interface Iprops {}
 interface IState {
   value: string
 }
@@ -24,8 +23,11 @@ export default class Menu extends React.Component<Iprops, IState> {
   render() {
     return (
       <div className="MenuComponents">
-        {this.state.value}
-        <Button type="primary" onClick={()=>this.getdata()}>Primary</Button>
+        <div className="qqq"></div>
+        <WinActionBtn></WinActionBtn>
+
+        {/* {this.state.value}
+        <Button type="primary" onClick={()=>this.getdata()}>Primary</Button> */}
       </div>
     )
   }
