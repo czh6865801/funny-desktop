@@ -1,4 +1,4 @@
 
 export default {
-  '--them-sideBar': '#A5DEE4'
+  '--them-sideBar': '#2ec190'
 }
